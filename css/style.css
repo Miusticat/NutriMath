@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+.cerrar-sesion {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #b98ee0; /* morado pastel oscuro */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(150, 80, 190, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.cerrar-sesion:hover {
+  background-color: #a170cf; /* tono más profundo al pasar el cursor */
+  transform: scale(1.05);
+}
+
+:root {
+  --font-main: 'Outfit', sans-serif;
+
+  /* Colores Pastel */
+  --color-primary: #c8afff;
+  --color-primary-dark: #b08cea;
+  --color-accent: #e4d8ff;
+  --color-bg: #faf8ff;
+  --color-surface: #ffffff;
+  --color-secondary: #f2ecfc;
+
+  /* Texto */
+  --color-text: #3a2d55;
+  --color-text-light: #8474a1;
+
+  /* UI */
+  --radius: 18px;
+  --shadow: 0 6px 20px rgba(170, 130, 255, 0.2);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 960px;
+  width: 90%;
+  margin: 60px auto;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 48px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  margin-bottom: 2.5rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.col {
+  flex: 1 1 100%;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.6px solid var(--color-accent);
+  border-radius: var(--radius);
+  background-color: #fbf7ff;
+  font-size: 1rem;
+  color: var(--color-text);
+  box-shadow: inset 0 2px 6px rgba(180, 140, 255, 0.1);
+  transition: var(--transition);
+}
+
+input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  background-color: #f8f2ff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #c8afff, #e4d8ff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(170, 130, 255, 0.25);
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(135deg, #b08cea, #d8c4ff);
+  box-shadow: 0 6px 16px rgba(170, 130, 255, 0.35);
+  outline: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+th,
+td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  border: 1px solid #f0e9fd;
+}
+
+th {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.mensaje-bonito {
+  background-color: #f5f0ff;
+  padding: 22px 28px;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+  border: 2px dashed var(--color-accent);
+  margin-top: 2.5rem;
+  box-shadow: inset 0 0 6px rgba(200, 180, 255, 0.2);
+}
+
+.titulo-tabla {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .container {
+    padding: 28px 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
+
+/* Stickers bonitos */
+.michi-superior {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* 🩷 Gatito corazón arriba a la derecha */
+  width: 250px;
+  z-index: 1000;
+  animation: flotita 3s ease-in-out infinite;
+}
+
+.michi-lateral {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* 💜 Gatito panzón abajo a la izquierda */
+  width: 250px;
+  z-index: 1000;
+  animation: flotita 2.5s ease-in-out infinite;
+}
+
+@keyframes flotita {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
