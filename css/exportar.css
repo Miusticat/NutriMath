@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .tabla-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+  }
+  
+  thead th {
+    background: #ccc;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  tbody td {
+    text-align: center;
+    padding: 4px;
+  }
+  
+  button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

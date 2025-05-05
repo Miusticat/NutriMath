@@ -7,7 +7,7 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 
 require_once "conexion.php";
-$conn = conectarBD(); 
+$conn = conectarBD(); // o usa tu $conn si no tienes función
 
 $id_usuario = $_SESSION['id_usuario'];
 
@@ -16,7 +16,7 @@ $query = "SELECT a.id_alimento, a.nombre_alimento, a.peso_base, a.peso_analizado
           FROM alimentos a
           LEFT JOIN nutrientes n ON a.id_alimento = n.id_alimento
           WHERE a.id_usuario = ?
-          ORDER BY a.fecha_registro DESC";
+          ORDER BY a.fecha_registro ASC";
 
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $id_usuario);

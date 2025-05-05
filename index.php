@@ -18,12 +18,30 @@ $usuario = $_SESSION['nombre'];
   <title>NutriMath</title>
   <link rel="stylesheet" href="./css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+      /* Elimina las flechas del input number en navegadores WebKit (Chrome, Safari, Edge) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Elimina las flechas en Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+  </style>
 </head>
 <body>
   <main class="container" role="main">
     <header>
+        <!--------
       <img src="./img/gatito_corazon.png" alt="gatito tierno" class="michi-superior" />
+    
       <img src="./img/gatito_panzon.png" alt="gatito comiendo" class="michi-lateral" />
+      
+        ---->
       <h1>🐾 ¡Bienvenida a Michi... digo, NutriMath<?= $usuario ? ', doctora ' . htmlspecialchars($usuario) : ' princesa' ?>! 💜</h1>
 
       <img src="./img/logo.png" alt="Logo NutriMath" style="max-width: 250px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
@@ -64,6 +82,10 @@ $usuario = $_SESSION['nombre'];
     <div class="row center">
       <button class="btn" onclick="calcularValores()">✨ Calcular valores</button>
       <button class="btn" onclick="guardarAlimento()">💾 Guardar alimento</button>
+      <a href="exportar.php">
+  <button style="margin-top: 20px;">Exportar alimentos</button>
+</a>
+
       <a href="logout.php" class="cerrar-sesion">🚪 Cerrar sesión</a>
 
     </div>
@@ -212,6 +234,24 @@ function cargarHistorial() {
   <script>
   window.onload = function() {
     cargarHistorial();
+  };
+</script>
+
+
+<!---- SCRIPT PARA EVITAR QUE UTILICE LAS FLECHAS DE ARRIBA O ABAJO PARA CAMBIAR LOS NUMEROS DENTRO DE LOS INPUT --->
+<script>
+  window.onload = function() {
+    cargarHistorial();
+
+    // Aplicar a todos los input[type="number"]
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      input.addEventListener('wheel', e => e.preventDefault());
+      input.addEventListener('keydown', e => {
+        if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+          e.preventDefault();
+        }
+      });
+    });
   };
 </script>
 
